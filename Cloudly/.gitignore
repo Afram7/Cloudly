@@ -1,0 +1,35 @@
+# Build Folders
+bin/
+obj/
+
+# Visual Studio Code and Mac
+.vscode/
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet Packages
+packages/
+*.nupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# .NET/MAUI Specific
+*.log
+*.ds_store
+*.pdb
+*.dll
+*.exe
+*.cache/
+*.config
+*.vs/
+*.app/
+*.ipa
+*.apk
+
+# System files
+*.DS_Store
