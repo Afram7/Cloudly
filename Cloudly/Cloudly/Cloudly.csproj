@@ -24,7 +24,7 @@
 		<ApplicationTitle>Cloudly</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.cloudly</ApplicationId>
+		<ApplicationId>com.aframharoun.Cloudly</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -40,11 +40,11 @@
 
 	<ItemGroup>
 		<!-- App Icons (First one for android & second one for IOS) -->
-		<MauiIcon Include="Resources\AppIcons\AndroidAppIcon\appicon.svg" ForegroundFile="Resources\AppIcons\AndroidAppIcon\appiconfg.svg" Color="#0B2856" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'ios'" />
-		<MauiIcon Include="Resources\AppIcons\IosAppIcon\appicon.svg" ForegroundFile="Resources\AppIcons\IosAppIcon\appiconfg.svg" Color="#0B2856" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) != 'android'" />
+		<MauiIcon Include="Resources\AppIcons\AndroidAppIcon\appicon.svg" ForegroundFile="Resources\AppIcons\AndroidAppIcon\appiconfg.svg" Color="#0B2856" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" />
+		<MauiIcon Include="Resources\AppIcons\IosAppIcon\appicon.svg" ForegroundFile="Resources\AppIcons\IosAppIcon\appiconfg.svg" Color="#0B2856" Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'" />
 
 		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#0B2856" BaseSize="256,256" />
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
