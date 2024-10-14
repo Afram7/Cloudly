@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cloudly.Views.WelcomePage"
+             Title="WelcomePage">
+        <Grid 
+            RowDefinitions="0.5*, 0.5*" >
+
+            <Image
+                Source="cloudly_logo.png"
+                Grid.Row="0"
+                HeightRequest="250"
+                SemanticProperties.Description="Cloudly logo" />
+
+            <FlexLayout
+                Direction="Column"
+                Grid.Row="1"
+                AlignItems="Stretch"
+                JustifyContent="SpaceBetween" >
+
+                <VerticalStackLayout>
+                    <HorizontalStackLayout
+                        HorizontalOptions="Center" >
+                        <Label
+                            FontFamily="RobotoBold"
+                            FontSize="40" >Welcome to C</Label>
+                        <Label 
+                            FontFamily="RobotoRegular"
+                            FontSize="40" >loudly</Label>
+                    </HorizontalStackLayout>
+                    
+                    <Label
+                        FontSize="20"
+                        FontFamily="RobotoLight"
+                        HorizontalOptions="Center" >Please select a temperature unit</Label>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <Picker
+                        Title="Select Temperature Unit"
+                        TitleColor="#FEFEFE"
+                        Margin="0, 0, 0, 10" >
+                        <Picker.ItemsSource>
+                            <x:Array 
+                                Type="{x:Type x:String}" >
+                                <x:String>Celsius</x:String>
+                                <x:String>Fahrenheit</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
+
+                <VerticalStackLayout>
+                    <!-- This button should be disabled until the picker is selected -->
+                    <Button
+                        Text="Save"
+                        IsEnabled="False"
+                        Margin="0, 0, 0, 2"
+                        />
+
+                    <Button
+                        Text="Skip"
+                        WidthRequest="100"
+                        BackgroundColor="Transparent" />
+                </VerticalStackLayout>
+            </FlexLayout>
+        </Grid>
+</ContentPage>
