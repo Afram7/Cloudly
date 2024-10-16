@@ -4,34 +4,137 @@
              x:Class="Cloudly.Views.HomePage"
              Title="Home">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <!-- <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" /> -->
+    <ScrollView
+        VerticalScrollBarVisibility="Never" >
+        <FlexLayout
+            Direction="Column"
+            JustifyContent="Center"
+            AlignItems="Stretch" >
 
-            <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+            <!-- If favourites list is empty (Change direction to Column) -->
+            <!-- <VerticalStackLayout>
+                <Image 
+                    Source="star"
+                    HeightRequest="150" ></Image>
+                <Label 
+                    HorizontalOptions="Center"
+                    FontFamily="RobotoRegular"
+                    FontSize="24" >Add cities to your favourites</Label>
+            </VerticalStackLayout> -->
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+            <!-- If favourites list isn't empty (Change direction to Row) -->
+            <VerticalStackLayout>
+                <!-- This frame should be visible if the location permission is granted -->
+                <Frame
+                    HeightRequest="100"
+                    BackgroundColor="{StaticResource MainColor}"
+                    Padding="10"
+                    BorderColor="Transparent"
+                    CornerRadius="15"
+                    Margin="0, 0, 0, 15" >
+                    <Grid
+                        ColumnDefinitions="0.5*, 0.5*" >
+                        <FlexLayout
+                            Grid.Column="0"
+                            Direction="Column"
+                            JustifyContent="SpaceBetween" >
+                            <VerticalStackLayout>
+                                <HorizontalStackLayout>
+                                    <Label
+                                        FontFamily="RobotoMedium"
+                                        FontSize="20"
+                                        Margin="0, 0, 5, 0" >My location</Label>
+                                    <Image
+                                        Source="location"
+                                        WidthRequest="20"
+                                        HeightRequest="20" />
+                                </HorizontalStackLayout>
+                                <Label
+                                    FontFamily="RobotoRegular"
+                                    FontSize="16" >Tibro</Label>
+                            </VerticalStackLayout>
+                            <Label
+                                FontFamily="RobotoRegular"
+                                FontSize="14" >12:00</Label>
+                        </FlexLayout>
+                        <FlexLayout
+                            Grid.Column="1"
+                            JustifyContent="SpaceAround"
+                            AlignItems="Center" >
+                            <Image
+                                Source="cloudy"
+                                WidthRequest="40"
+                                HeightRequest="40" />
+                            <HorizontalStackLayout>
+                                <Label
+                                    VerticalOptions="Center"
+                                    FontSize="36"
+                                    FontFamily="RobotoRegular" >14</Label>
+                                <VerticalStackLayout>
+                                    <Label
+                                        FontSize="19"
+                                        FontFamily="RobotoRegular" >°C</Label>
+                                </VerticalStackLayout>
+                            </HorizontalStackLayout>
+                        </FlexLayout>
+                    </Grid>
+                </Frame>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
-        </VerticalStackLayout>
+                <!-- Favourite cities -->
+                <CollectionView
+                    x:Name="favouriteCitiesColloection" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Type x:String}" >
+                            <FlexLayout
+                                Direction="Column"
+                                Margin="0, 0, 0, 15" >
+                                <Frame
+                                    HeightRequest="100"
+                                    BackgroundColor="{StaticResource AccentColor}"
+                                    Padding="10"
+                                    BorderColor="{StaticResource TextColor}"
+                                    CornerRadius="15" >
+                                    <Grid
+                                        ColumnDefinitions="0.5*, 0.5*" >
+                                        <VerticalStackLayout
+                                            Grid.Column="0"
+                                            VerticalOptions="Center" >
+                                            <Label
+                                                Text="{Binding .}"
+                                                Grid.Column="0"
+                                                FontSize="20"
+                                                FontFamily="RobotoMedium" ></Label>
+                                            <Label
+                                                FontFamily="RobotoRegular"
+                                                FontSize="14" >12:00</Label>
+                                        </VerticalStackLayout>
+                                        <FlexLayout
+                                            Grid.Column="1"
+                                            JustifyContent="SpaceAround"
+                                            AlignItems="Center" >
+                                            <Image
+                                                Source="cloudy"
+                                                WidthRequest="40"
+                                                HeightRequest="40" />
+                                            <HorizontalStackLayout>
+                                                <Label
+                                                    VerticalOptions="Center"
+                                                    FontSize="36"
+                                                    FontFamily="RobotoRegular" >14</Label>
+                                                <VerticalStackLayout>
+                                                    <Label
+                                                        FontSize="19"
+                                                        FontFamily="RobotoRegular" >°C</Label>
+                                                </VerticalStackLayout>
+                                            </HorizontalStackLayout>
+                                        </FlexLayout>
+                                    </Grid>
+                                </Frame>
+                            </FlexLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </FlexLayout>
     </ScrollView>
-
 </ContentPage>

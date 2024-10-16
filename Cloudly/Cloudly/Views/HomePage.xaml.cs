@@ -2,23 +2,11 @@
 
 public partial class HomePage : ContentPage
 {
-	int count = 0;
 
+	// string[] dummyCities = { "Tibro", "Skövde", "Jönköping", "Stockholm", "Göteborg", "Värnamo", "Oslo", "Hjo", "Trollhättan", "Linköping"};
 	public HomePage()
 	{
 		InitializeComponent();
-	}
-
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		//favouriteCitiesColloection.ItemsSource = dummyCities;
 	}
 }
-
