@@ -3,10 +3,123 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cloudly.Views.SearchPage"
              Title="Search">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             
+             <Grid RowDefinitions="0.14*, *">
+
+                <StackLayout
+                    Grid.Row="0" >
+                    <SearchBar
+                        Placeholder="Search for cities..."
+                        BackgroundColor="{StaticResource BackgroundColor}"
+                        Margin="0, 0, 0, 15"
+                        TextColor="{StaticResource TextColor}"
+                        CancelButtonColor="{StaticResource TextColor}"
+                        Keyboard="Default"
+                        FontFamily="RobotoRegular"
+                        PlaceholderColor="{StaticResource TextColor}" />
+                    <FlexLayout
+                        JustifyContent="SpaceBetween"
+                        AlignItems="Center"
+                        Direction="Row" >
+                        <Label
+                            FontSize="16"
+                            FontFamily="RobotoRegular" >Recently Searched</Label>
+                        <Button 
+                            Text="Clear all" 
+                            TextColor="Red"
+                            BackgroundColor="Transparent"
+                            FontSize="16"
+                            FontFamily="RobotoRegular"
+                            Padding="0" />
+                    </FlexLayout>
+                </StackLayout>
+
+                <CollectionView
+                    Grid.Row="1"
+                    x:Name="recentlySearchedCitiesColloection"
+                    VerticalScrollBarVisibility="Never"
+                    ItemsLayout="VerticalGrid, 2" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <FlexLayout
+                                WidthRequest="210"
+                                HeightRequest="210"
+                                JustifyContent="Center"
+                                AlignItems="Center" >
+                                <Frame
+                                    BackgroundColor="{StaticResource AccentColor}"
+                                    WidthRequest="190"
+                                    HeightRequest="190"
+                                    Padding="0" >
+
+                                    <Grid
+                                        RowDefinitions="0.5*, 0.5*" >
+
+                                        <Grid
+                                            Grid.Row="0"
+                                            ColumnDefinitions="0.75*, 0.25*" >
+
+                                            <VerticalStackLayout
+                                                Grid.Column="0"
+                                                Padding="15, 0, 0, 0"
+                                                VerticalOptions="Center" >
+                                                <Label
+                                                    FontSize="20"
+                                                    FontFamily="RobotoMedium"
+                                                    Text="{Binding .}" ></Label>
+                                                <Label
+                                                    FontSize="14"
+                                                    FontFamily="RobotoRegular" >14:00</Label>
+                                            </VerticalStackLayout>
+
+                                            <Button
+                                                Grid.Column="1"
+                                                VerticalOptions="Start"
+                                                HorizontalOptions="End"
+                                                Padding="0"
+                                                BackgroundColor="Transparent"
+                                                Text="×"
+                                                FontSize="35"
+                                                FontFamily="RobotoLight" ></Button>
+                                                
+                                        </Grid>
+
+                                        <Grid
+                                            ColumnDefinitions="0.5*, 0.5*"
+                                            Grid.Row="1" >
+                                            
+                                            <HorizontalStackLayout
+                                                Grid.Column="0"
+                                                Padding="15, 0, 0, 0"
+                                                VerticalOptions="Center" >
+                                                <Label
+                                                    FontSize="48"
+                                                    FontFamily="RobotoRegular" >14</Label>
+                                                <Label
+                                                    VerticalOptions="Start"
+                                                    FontSize="24"
+                                                    FontFamily="RobotoRegular">°C</Label>
+                                            </HorizontalStackLayout>
+
+                                            <VerticalStackLayout
+                                                Grid.Column="1"
+                                                VerticalOptions="Center"
+                                                HorizontalOptions="End"
+                                                Padding="0, 0, 15, 0" >
+                                                <Image
+                                                    Source="cloudy"
+                                                    HeightRequest="50"
+                                                    WidthRequest="50" ></Image>
+                                            </VerticalStackLayout>
+
+                                        </Grid>
+
+                                    </Grid>
+                                </Frame>
+                            </FlexLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                
+             </Grid>
 </ContentPage>

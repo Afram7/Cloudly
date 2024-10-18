@@ -8,10 +8,10 @@
         VerticalScrollBarVisibility="Never" >
         <FlexLayout
             Direction="Column"
-            JustifyContent="Center"
+            JustifyContent="Start"
             AlignItems="Stretch" >
 
-            <!-- If favourites list is empty (Change direction to Column) -->
+            <!-- If favourites list is empty (Change direction to Column and JustifyContent to Center) -->
             <!-- <VerticalStackLayout>
                 <Image 
                     Source="star"
@@ -22,7 +22,7 @@
                     FontSize="24" >Add cities to your favourites</Label>
             </VerticalStackLayout> -->
 
-            <!-- If favourites list isn't empty (Change direction to Row) -->
+            <!-- If favourites list isn't empty (Change direction to Row and JustifyContent to Start) -->
             <VerticalStackLayout>
                 <!-- This frame should be visible if the location permission is granted -->
                 <Frame
