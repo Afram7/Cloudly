@@ -4,9 +4,60 @@
              x:Class="Cloudly.Views.SettingsPage"
              Title="Settings">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+        <Label
+            FontSize="16"
+            FontFamily="RobotoRegular" >Units</Label>
+        <Picker
+            Title="Temperature Unit"
+            TitleColor="{StaticResource TextColor}"
+            FontFamily="RobotoRegular"
+            FontSize="20"
+            HorizontalTextAlignment="Start"
+            Margin="0, 0, 0, 40" >
+            <Picker.ItemsSource>
+                <x:Array 
+                    Type="{x:Type x:String}" >
+                    <x:String>Celsius</x:String>
+                    <x:String>Fahrenheit</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Label
+            FontSize="16"
+            FontFamily="RobotoRegular" >Location</Label>
+        <Frame
+            Margin="0, 0, 0, 40" 
+            BackgroundColor="{StaticResource AccentColor}" >
+            <FlexLayout
+                Padding="0"
+                JustifyContent="SpaceBetween"
+                AlignItems="Center" >
+                <Label
+                    FontFamily="RobotoRegular"
+                    FontSize="20" >Location Access</Label>
+                <Switch
+                    ThumbColor="{StaticResource TextColor}" ></Switch>
+            </FlexLayout>
+        </Frame>
+
+        <Label
+            FontSize="16"
+            FontFamily="RobotoRegular" >Notifications</Label>
+        <Frame
+            BackgroundColor="{StaticResource AccentColor}" >
+            <FlexLayout
+                Padding="0"
+                JustifyContent="SpaceBetween"
+                AlignItems="Center" >
+                <Label
+                    FontFamily="RobotoRegular"
+                    FontSize="20" >Enable Notifications</Label>
+                <Switch
+                    ThumbColor="{StaticResource TextColor}" ></Switch>
+            </FlexLayout>
+        </Frame>
+        
     </VerticalStackLayout>
 </ContentPage>
