@@ -10,7 +10,7 @@
             FontFamily="RobotoRegular" >Units</Label>
         <Picker
             Title="Temperature Unit"
-            TitleColor="{StaticResource TextColor}"
+            TitleColor="#FEFEFE"
             FontFamily="RobotoRegular"
             FontSize="20"
             HorizontalTextAlignment="Start"
