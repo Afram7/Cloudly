@@ -7,12 +7,12 @@
 
         <Label
             FontSize="16"
-            FontFamily="RobotoRegular" >Units</Label>
+            FontFamily="RobotoBold" >Units</Label>
         <Picker
             Title="Temperature Unit"
             TitleColor="#FEFEFE"
             FontFamily="RobotoRegular"
-            FontSize="20"
+            FontSize="16"
             HorizontalTextAlignment="Start"
             Margin="0, 0, 0, 40" >
             <Picker.ItemsSource>
@@ -26,7 +26,7 @@
 
         <Label
             FontSize="16"
-            FontFamily="RobotoRegular" >Location</Label>
+            FontFamily="RobotoBold" >Location</Label>
         <Frame
             Margin="0, 0, 0, 40" 
             BackgroundColor="{StaticResource AccentColor}" >
@@ -36,7 +36,7 @@
                 AlignItems="Center" >
                 <Label
                     FontFamily="RobotoRegular"
-                    FontSize="20" >Location Access</Label>
+                    FontSize="16" >Location Access</Label>
                 <Switch
                     ThumbColor="{StaticResource TextColor}" ></Switch>
             </FlexLayout>
@@ -44,7 +44,7 @@
 
         <Label
             FontSize="16"
-            FontFamily="RobotoRegular" >Notifications</Label>
+            FontFamily="RobotoBold" >Notifications</Label>
         <Frame
             BackgroundColor="{StaticResource AccentColor}" >
             <FlexLayout
@@ -53,7 +53,7 @@
                 AlignItems="Center" >
                 <Label
                     FontFamily="RobotoRegular"
-                    FontSize="20" >Enable Notifications</Label>
+                    FontSize="16" >Enable Notifications</Label>
                 <Switch
                     ThumbColor="{StaticResource TextColor}" ></Switch>
             </FlexLayout>

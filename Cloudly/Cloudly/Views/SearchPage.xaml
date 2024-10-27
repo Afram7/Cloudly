@@ -28,7 +28,6 @@
                             Text="Clear all" 
                             TextColor="Red"
                             BackgroundColor="Transparent"
-                            FontSize="16"
                             FontFamily="RobotoRegular"
                             Padding="0" />
                     </FlexLayout>
@@ -68,7 +67,7 @@
                                                     FontFamily="RobotoMedium"
                                                     Text="{Binding .}" ></Label>
                                                 <Label
-                                                    FontSize="14"
+                                                    FontSize="16"
                                                     FontFamily="RobotoRegular" >14:00</Label>
                                             </VerticalStackLayout>
 

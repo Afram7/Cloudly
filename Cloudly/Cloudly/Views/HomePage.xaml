@@ -19,7 +19,7 @@
                 <Label 
                     HorizontalOptions="Center"
                     FontFamily="RobotoRegular"
-                    FontSize="24" >Add cities to your favourites</Label>
+                    FontSize="20" >Add cities to your favourites</Label>
             </VerticalStackLayout> -->
 
             <!-- If favourites list isn't empty (Change direction to Row and JustifyContent to Start) -->
@@ -55,7 +55,7 @@
                             </VerticalStackLayout>
                             <Label
                                 FontFamily="RobotoRegular"
-                                FontSize="14" >12:00</Label>
+                                FontSize="16" >12:00</Label>
                         </FlexLayout>
                         <FlexLayout
                             Grid.Column="1"
@@ -106,7 +106,7 @@
                                                 FontFamily="RobotoMedium" ></Label>
                                             <Label
                                                 FontFamily="RobotoRegular"
-                                                FontSize="14" >12:00</Label>
+                                                FontSize="16" >12:00</Label>
                                         </VerticalStackLayout>
                                         <FlexLayout
                                             Grid.Column="1"
