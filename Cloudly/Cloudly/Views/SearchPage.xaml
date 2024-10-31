@@ -2,104 +2,101 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cloudly.Views.SearchPage"
-             Title="Search">
+             Title="Search" >
              
-            <Grid
-                RowDefinitions="auto, *" >
-                <VerticalStackLayout
-                    Grid.Row="0" >
-                    <SearchBar
-                        Placeholder="Search for cities..."
-                        BackgroundColor="{StaticResource BackgroundColor}"
-                        Margin="0, 0, 0, 15"
-                        TextColor="{StaticResource TextColor}"
-                        CancelButtonColor="{StaticResource TextColor}"
-                        Keyboard="Default"
-                        FontFamily="RobotoRegular"
-                        PlaceholderColor="{StaticResource TextColor}" />
+    <Grid
+        RowDefinitions="auto, *" >
+        <VerticalStackLayout
+            Grid.Row="0" >
+            <SearchBar
+                Placeholder="Search for cities..."
+                BackgroundColor="{StaticResource BackgroundColor}"
+                Margin="0, 0, 0, 15"
+                TextColor="{StaticResource TextColor}"
+                CancelButtonColor="{StaticResource TextColor}"
+                Keyboard="Default"
+                FontFamily="RobotoRegular"
+                PlaceholderColor="{StaticResource TextColor}" />
+            <FlexLayout
+                JustifyContent="SpaceBetween"
+                AlignItems="Center" >
+                <Label
+                    FontSize="16"
+                    FontFamily="RobotoRegular" >Recently Searched</Label>
+                <Button 
+                    Text="Clear all" 
+                    TextColor="Red"
+                    BackgroundColor="Transparent"
+                    FontFamily="RobotoRegular"
+                    Padding="0" />
+            </FlexLayout>
+        </VerticalStackLayout>
+        <CollectionView
+            Margin="0, 15, 0, 0"
+            VerticalScrollBarVisibility="Never"
+            x:Name="recentlySearchedCitiesColloection"
+            Grid.Row="1" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
                     <FlexLayout
-                        JustifyContent="SpaceBetween"
-                        AlignItems="Center" >
-                        <Label
-                            FontSize="16"
-                            FontFamily="RobotoRegular" >Recently Searched</Label>
-                        <Button 
-                            Text="Clear all" 
-                            TextColor="Red"
-                            BackgroundColor="Transparent"
-                            FontFamily="RobotoRegular"
-                            Padding="0" />
-                    </FlexLayout>
-                </VerticalStackLayout>
-
-                <CollectionView
-                    Margin="0, 15, 0, 0"
-                    VerticalScrollBarVisibility="Never"
-                    x:Name="recentlySearchedCitiesColloection"
-                    Grid.Row="1" >
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <FlexLayout
-                                Direction="Column"
-                                Margin="0, 0, 0, 15" >
-                                <Frame
-                                    HeightRequest="100"
-                                    BackgroundColor="{StaticResource AccentColor}"
-                                    Padding="0"
-                                    CornerRadius="15" >
-                                    <Grid
-                                        ColumnDefinitions="0.5*, 0.5*" >
-                                        <VerticalStackLayout
-                                            Padding="15, 0, 0, 0"
-                                            Grid.Column="0"
-                                            VerticalOptions="Center" >
-                                            <Label
-                                                Text="{Binding .}"
-                                                FontSize="20"
-                                                FontFamily="RobotoMedium" ></Label>
-                                            <Label
-                                                FontFamily="RobotoRegular"
-                                                FontSize="16" >12:00</Label>
-                                        </VerticalStackLayout>
-
+                        Direction="Column"
+                        Margin="0, 0, 0, 15" >
+                        <Frame
+                            HeightRequest="100"
+                            BackgroundColor="{StaticResource AccentColor}"
+                            Padding="0"
+                            CornerRadius="15" >
+                            <Grid
+                                ColumnDefinitions="0.5*, 0.5*" >
+                                <VerticalStackLayout
+                                    Padding="15, 0, 0, 0"
+                                    Grid.Column="0"
+                                    VerticalOptions="Center" >
+                                    <Label
+                                        Text="{Binding .}"
+                                        FontSize="20"
+                                        FontFamily="RobotoMedium" />
+                                    <Label
+                                        FontFamily="RobotoRegular"
+                                        FontSize="16" >12:00</Label>
+                                </VerticalStackLayout>
+                                <FlexLayout
+                                    Grid.Column="1"
+                                    JustifyContent="SpaceBetween" >
+                                    <Image
+                                        VerticalOptions="Center"
+                                        Source="cloudy"
+                                        MaximumWidthRequest="40"
+                                        MaximumHeightRequest="40" />
+                                        
+                                    <HorizontalStackLayout
+                                        VerticalOptions="Center" >
+                                        <Label
+                                            FontFamily="RobotoRegular"
+                                            FontSize="36" >14</Label>
+                                        <Label
+                                            FontSize="19"
+                                            FontFamily="RobotoRegular" >°C</Label>
+                                    </HorizontalStackLayout>
+                                    <VerticalStackLayout
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="End" >
                                         <FlexLayout
-                                            Grid.Column="1"
-                                            JustifyContent="SpaceBetween" >
-                                            <Image
-                                                VerticalOptions="Center"
-                                                Source="cloudy"
-                                                MaximumWidthRequest="40"
-                                                MaximumHeightRequest="40" />
-                                                
-                                            <HorizontalStackLayout
-                                                VerticalOptions="Center" >
-                                                <Label
-                                                    FontFamily="RobotoRegular"
-                                                    FontSize="36" >14</Label>
-                                                <Label
-                                                    FontSize="19"
-                                                    FontFamily="RobotoRegular" >°C</Label>
-                                            </HorizontalStackLayout>
-
-                                            <VerticalStackLayout
-                                                VerticalOptions="Start"
-                                                HorizontalOptions="End" >
-                                                <FlexLayout
-                                                    AlignItems="Center" >
-                                                    <Button
-                                                        Padding="0"
-                                                        BackgroundColor="Transparent"
-                                                        Text="×"
-                                                        FontSize="35"
-                                                        FontFamily="RobotoLight" ></Button>
-                                                </FlexLayout>
-                                            </VerticalStackLayout>
+                                            AlignItems="Center" >
+                                            <Button
+                                                Padding="0"
+                                                BackgroundColor="Transparent"
+                                                Text="×"
+                                                FontSize="35"
+                                                FontFamily="RobotoLight" />
                                         </FlexLayout>
-                                    </Grid>
-                                </Frame>
-                            </FlexLayout>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </Grid>
+                                    </VerticalStackLayout>
+                                </FlexLayout>
+                            </Grid>
+                        </Frame>
+                    </FlexLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
 </ContentPage>

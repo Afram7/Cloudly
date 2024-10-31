@@ -2,9 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cloudly.Views.SettingsPage"
-             Title="Settings">
-    <VerticalStackLayout>
+             Title="Settings" >
 
+    <VerticalStackLayout>
         <Label
             FontSize="16"
             FontFamily="RobotoBold" >Units</Label>
@@ -23,7 +23,6 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
-
         <Label
             FontSize="16"
             FontFamily="RobotoBold" >Location</Label>
@@ -43,7 +42,6 @@
                     ThumbColor="{StaticResource TextColor}" ></Switch>
             </FlexLayout>
         </Frame>
-
         <Label
             FontSize="16"
             FontFamily="RobotoBold" >Notifications</Label>
@@ -62,6 +60,5 @@
                     ThumbColor="{StaticResource TextColor}" ></Switch>
             </FlexLayout>
         </Frame>
-        
     </VerticalStackLayout>
 </ContentPage>

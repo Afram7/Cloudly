@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Cloudly.Views.HomePage"
-             Title="Home">
+             Title="Home" >
 
     <ScrollView
         VerticalScrollBarVisibility="Never" >
@@ -10,18 +10,16 @@
             Direction="Column"
             JustifyContent="Start"
             AlignItems="Stretch" >
-
             <!-- If favourites list is empty (Change direction to Column and JustifyContent to Center) -->
             <!-- <VerticalStackLayout>
                 <Image 
                     Source="star"
-                    HeightRequest="150" ></Image>
+                    HeightRequest="150" />
                 <Label 
                     HorizontalOptions="Center"
                     FontFamily="RobotoRegular"
                     FontSize="20" >Add cities to your favourites</Label>
             </VerticalStackLayout> -->
-
             <!-- If favourites list isn't empty (Change direction to Row and JustifyContent to Start) -->
             <VerticalStackLayout>
                 <!-- This frame should be visible if the location permission is granted -->
@@ -79,12 +77,12 @@
                         </FlexLayout>
                     </Grid>
                 </Frame>
-
                 <!-- Favourite cities -->
                 <CollectionView
                     x:Name="favouriteCitiesColloection" >
                     <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="{x:Type x:String}" >
+                        <DataTemplate
+                            x:DataType="{x:Type x:String}" >
                             <FlexLayout
                                 Direction="Column"
                                 Margin="0, 0, 0, 15" >
@@ -102,7 +100,7 @@
                                                 Text="{Binding .}"
                                                 Grid.Column="0"
                                                 FontSize="20"
-                                                FontFamily="RobotoMedium" ></Label>
+                                                FontFamily="RobotoMedium" />
                                             <Label
                                                 FontFamily="RobotoRegular"
                                                 FontSize="16" >12:00</Label>

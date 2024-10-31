@@ -5,71 +5,68 @@
              Title="SpecificCityPage" >
 
     <Grid
-    RowDefinitions=".4*, .6*" >
-    <Grid
-        Grid.Row="0"
-        RowDefinitions="Auto, *"
-        Margin="0, 0, 0, 10" >
-        <FlexLayout
+        RowDefinitions=".4*, .6*" >
+        <Grid
             Grid.Row="0"
-            JustifyContent="SpaceBetween"
+            RowDefinitions="Auto, *"
             Margin="0, 0, 0, 10" >
-            <Label 
-            VerticalOptions="Center"
-            FontSize="24"
-            FontFamily="RobotoMedium" >Today</Label>
-            <ImageButton
-                Source="favourite"
-                MaximumHeightRequest="35"
-                MaximumWidthRequest="35" >
-            </ImageButton>
-        </FlexLayout>
+            <FlexLayout
+                Grid.Row="0"
+                JustifyContent="SpaceBetween"
+                Margin="0, 0, 0, 10" >
+                <Label 
+                VerticalOptions="Center"
+                FontSize="24"
+                FontFamily="RobotoMedium" >Today</Label>
+                <ImageButton
+                    Source="favourite"
+                    MaximumHeightRequest="35"
+                    MaximumWidthRequest="35" />
+            </FlexLayout>
+            <Frame
+                Grid.Row="1"
+                Padding="0"
+                BackgroundColor="{StaticResource AccentColor}" >
+                <CollectionView
+                    ItemsLayout="HorizontalList"
+                    VerticalScrollBarVisibility="Never"
+                    HorizontalScrollBarVisibility="Never"
+                    x:Name="timeCollection" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <FlexLayout
+                                Direction="Column"
+                                Margin="15, 0"
+                                JustifyContent="SpaceAround" >
+                                <HorizontalStackLayout
+                                    HorizontalOptions="Center" >
+                                    <Label
+                                        FontFamily="RobotoRegular"
+                                        FontSize="24" >14</Label>
+                                    <Label
+                                        FontFamily="RobotoRegular"
+                                        FontSize="16" >°C</Label>
+                                </HorizontalStackLayout>
+                                <Image
+                                    HorizontalOptions="Center"
+                                    MaximumHeightRequest="30"
+                                    MaximumWidthRequest="30"
+                                    Source="cloudy" />
+                                <Label
+                                    HorizontalOptions="Center"
+                                    FontSize="16"
+                                    Text="{Binding .}" />
+                            </FlexLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+        </Grid>
         <Frame
+            x:Name="upcomingDaysFrame"
             Grid.Row="1"
-            Padding="0"
-            BackgroundColor="{StaticResource AccentColor}" >
-            <CollectionView
-                ItemsLayout="HorizontalList"
-                VerticalScrollBarVisibility="Never"
-                HorizontalScrollBarVisibility="Never"
-                x:Name="timeCollection" >
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <FlexLayout
-                            Direction="Column"
-                            Margin="15, 0"
-                            JustifyContent="SpaceAround" >
-                            <HorizontalStackLayout
-                                HorizontalOptions="Center">
-                                <Label
-                                    FontFamily="RobotoRegular"
-                                    FontSize="24" >14</Label>
-                                <Label
-                                    FontFamily="RobotoRegular"
-                                    FontSize="16" >°C</Label>
-                            </HorizontalStackLayout>
-                            <Image
-                                HorizontalOptions="Center"
-                                MaximumHeightRequest="30"
-                                MaximumWidthRequest="30"
-                                Source="cloudy">
-                            </Image>
-                            <Label
-                                HorizontalOptions="Center"
-                                FontSize="16"
-                                Text="{Binding .}"></Label>
-                        </FlexLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </Frame>
-    </Grid>
-    <Frame
-        x:Name="upcomingDaysFrame"
-        Grid.Row="1"
-        BackgroundColor="{StaticResource AccentColor}"
-        Margin="0, 0, 0, 10"
-        Padding="15, 0" >
-    </Frame>
+            BackgroundColor="{StaticResource AccentColor}"
+            Margin="0, 0, 0, 10"
+            Padding="15, 0" />
     </Grid>
 </ContentPage>
