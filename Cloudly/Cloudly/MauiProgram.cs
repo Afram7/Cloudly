@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Cloudly.ViewModels;
+using Cloudly.Views;
+using Microsoft.Extensions.Logging;
 
 namespace Cloudly;
 
@@ -34,6 +36,9 @@ public static class MauiProgram
 				fonts.AddFont("RobotoCondensedLightItalic.ttf", "RobotoCondensedLightItalic");
 				fonts.AddFont("RobotoCondensed-Regular.ttf", "RobotoCondensedRegular");
 			});
+
+		builder.Services.AddSingleton<WelcomePage>();
+		builder.Services.AddSingleton<WelcomeViewModel>();
 
 #if DEBUG
 		builder.Logging.AddDebug();

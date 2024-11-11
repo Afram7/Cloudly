@@ -42,23 +42,5 @@
                     ThumbColor="{StaticResource TextColor}" ></Switch>
             </FlexLayout>
         </Frame>
-        <Label
-            FontSize="16"
-            FontFamily="RobotoBold" >Notifications</Label>
-        <Frame
-            Padding="5, 0"
-            MinimumHeightRequest="50"
-            BackgroundColor="{StaticResource AccentColor}" >
-            <FlexLayout
-                Padding="0"
-                JustifyContent="SpaceBetween"
-                AlignItems="Center" >
-                <Label
-                    FontFamily="RobotoRegular"
-                    FontSize="16" >Enable Notifications</Label>
-                <Switch
-                    ThumbColor="{StaticResource TextColor}" ></Switch>
-            </FlexLayout>
-        </Frame>
     </VerticalStackLayout>
 </ContentPage>

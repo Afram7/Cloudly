@@ -4,6 +4,13 @@
 <dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your location is needed to provide relevant information based on your current location.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your location is needed to provide relevant information based on your current location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your location is needed to provide relevant information based on your current location.</string>
+	<string></string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
